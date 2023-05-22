@@ -7,9 +7,9 @@ const app = express();
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
-app.use(express.static('Develop'));
-app.use(htmlRoutes);
-app.use(apiRoutes);
+app.use(express.static('./develop/public'));
+app.use(htmlRoutes)
+app.use(apiRoutes)
 
 app.listen(PORT, () => {
     console.log(`Listening on port: ${PORT}`);
