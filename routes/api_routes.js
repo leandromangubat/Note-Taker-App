@@ -1,6 +1,10 @@
 const router = require('express').Router();
-const {v4: uuidv4} = require('uuid');
 const fs = require('fs');
+const uuid = () => {
+    return Math.floor((1 + Math.random()) * 0x10000)
+      .toString(16)
+      .substring(1);
+  };
 
 router.get('/api/notes', async (req, res) => {
     const jsonFile = await JSON.parse(fs.readFileSync("Develop/db/db.json", "utf8"));
@@ -12,7 +16,7 @@ router.post('/api/notes', (req, res) => {
     const newNote = {
         title: req.body.title,
         text: req.body.text,
-        id: uuidv4(),
+        id: uuid(),
     }
     jsonFile.push(newNote);
     fs.writeFileSync("Develop/db/db.json", JSON.stringify(jsonFile));
