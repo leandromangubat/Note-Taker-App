@@ -13,6 +13,7 @@ note.get('/api/notes', (req, res) => {
     res.json(jsonFile);
 });
 
+//POST method
 note.post('/api/notes', (req, res) => {
     const jsonFile = JSON.parse(fs.readFileSync("Develop/db/db.json", "utf8"));
     const {title, text} = req.body;
@@ -26,6 +27,7 @@ note.post('/api/notes', (req, res) => {
     res.json(jsonFile);
 });
 
+//DELETE method
 note.delete('/api/notes/:id', (req, res) => {
     const savedNote = JSON.parse(fs.readFileSync("Develop/db/db.json", "utf8"));
     const delNote = savedNote.filter((note) => {
