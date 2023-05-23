@@ -6,16 +6,17 @@ const uuid = () => {
       .substring(1);
   };
 
-router.get('/api/notes', async (req, res) => {
-    const jsonFile = await JSON.parse(fs.readFileSync("Develop/db/db.json", "utf8"));
+router.get('/api/notes', (req, res) => {
+    const jsonFile = JSON.parse(fs.readFileSync("Develop/db/db.json", "utf8"));
     res.json(jsonFile);
 });
 
 router.post('/api/notes', (req, res) => {
     const jsonFile = JSON.parse(fs.readFileSync("Develop/db/db.json", "utf8"));
+    const {title, text} = req.body;
     const newNote = {
-        title: req.body.title,
-        text: req.body.text,
+        title,
+        text,
         id: uuid(),
     }
     jsonFile.push(newNote);
