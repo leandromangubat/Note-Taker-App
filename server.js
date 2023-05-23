@@ -6,7 +6,7 @@ const app = express();
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
-app.use(express.static('./develop/public'));
+app.use(express.static('./Develop/public'));
 app.use(htmlRoutes);
 app.use(apiRoutes);
 
