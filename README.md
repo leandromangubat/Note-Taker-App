@@ -21,7 +21,6 @@ Open your web browser and navigate to http://localhost:3001 to access the Note T
 
 
 ## Usage
-Upon opening the app, you will be presented with a blank note-taking interface.
 To create a new note, enter a title and a description for the note in the respective input fields.
 Once you have finished writing the note details, click the save icon located in the top right corner of the screen to save the note.
 The saved note will appear in the note list on the left side of the screen, displaying its title.
@@ -35,7 +34,8 @@ Node.js
 Express.js
 
 ## Credits
-The Note Taker App was developed by [Your Name].
-
+The Note Taker App was developed by Leandro Mangubat.
+Email: leandromangubat@hotmail.com 
+Github: [github.com/leandromangubat](https://github.com/leandromangubat)
 ## License
 This project is licensed under the MIT License.
