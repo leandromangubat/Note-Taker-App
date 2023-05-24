@@ -9,28 +9,28 @@ const uuid = () => {
 
 // GET method
 note.get('/api/notes', (req, res) => {
-    const jsonFile = JSON.parse(fs.readFileSync("Develop/db/db.json", "utf8"));
-    res.json(jsonFile);
+    const jsonNote = JSON.parse(fs.readFileSync("Develop/db/db.json", "utf8"));
+    res.json(jsonNote);
 });
 
 //POST method
 note.post('/api/notes', (req, res) => {
-    const jsonFile = JSON.parse(fs.readFileSync("Develop/db/db.json", "utf8"));
+    const jsonNote = JSON.parse(fs.readFileSync("Develop/db/db.json", "utf8"));
     const {title, text} = req.body;
     const newNote = {
         title,
         text,
         id: uuid(),
     }
-    jsonFile.push(newNote);
-    fs.writeFileSync("Develop/db/db.json", JSON.stringify(jsonFile));
-    res.json(jsonFile);
+    jsonNote.push(newNote);
+    fs.writeFileSync("Develop/db/db.json", JSON.stringify(jsonNote));
+    res.json(jsonNote);
 });
 
 //DELETE method
 note.delete('/api/notes/:id', (req, res) => {
-    const savedNote = JSON.parse(fs.readFileSync("Develop/db/db.json", "utf8"));
-    const delNote = savedNote.filter((note) => {
+    const jsonNote = JSON.parse(fs.readFileSync("Develop/db/db.json", "utf8"));
+    const delNote = jsonNote.filter((note) => {
         return note.id !==req.params.id;
     });
 
