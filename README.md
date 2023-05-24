@@ -35,7 +35,10 @@ Express.js
 
 ## Credits
 The Note Taker App was developed by Leandro Mangubat.
+
 Email: leandromangubat@hotmail.com 
+
 Github: [github.com/leandromangubat](https://github.com/leandromangubat)
+
 ## License
 This project is licensed under the MIT License.
