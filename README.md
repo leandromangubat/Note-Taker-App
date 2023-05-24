@@ -1,6 +1,8 @@
 # Note Taker App
 The Note Taker App is a simple application that allows users to take notes by providing a title and a description for each note. It provides an intuitive interface for creating, saving, and managing notes.
 
+![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)
+
 ## Features
  - Create Notes: Users can create new notes by entering a title and a description for each note.
  - Save Notes: The app provides a save icon located in the top right corner of the screen. Clicking on this icon will save the note, preserving the entered title and description.
