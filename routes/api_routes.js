@@ -30,10 +30,11 @@ note.post('/api/notes', (req, res) => {
 //DELETE method
 note.delete('/api/notes/:id', (req, res) => {
     const jsonNote = JSON.parse(fs.readFileSync("Develop/db/db.json", "utf8"));
+    //Filters note to be deleted
     const delNote = jsonNote.filter((note) => {
         return note.id !==req.params.id;
     });
-
+    //Creates updated file with deleted note
     fs.writeFileSync("Develop/db/db.json", JSON.stringify(delNote));
     res.json("Note Deleted");
 });
